@@ -1,0 +1,16 @@
+{
+    "resources": {
+        "paletteLabel": "Line Notify",
+        "labels": {
+            "accessToken": "access token",
+            "name": "name"
+        },
+        "message": {
+            "ready": "Ready",
+            "complete": "Display complete",
+            "tokenError": "Token setting error",
+            "error": "Error occurred",
+            "communicationError": "Transmission error"
+        }
+    }
+}

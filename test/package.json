@@ -1,0 +1,19 @@
+{
+  "name": "node-red-base",
+  "version": "0.0.1",
+  "description": "Quick-start template repository for creating new Node-RED node sets in Node-RED.",
+  "author": "sanlike",
+  "license": "Apache",
+  "main": "",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanlike0911/node-red-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanlike0911/node-red-base/issues"
+  },
+  "homepage": "https://github.com/sanlike0911/node-red-base#readme"
+}

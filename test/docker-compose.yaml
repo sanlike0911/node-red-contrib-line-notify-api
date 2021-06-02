@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  nodeRed:
+    build: .
+    image: nodered/node-red:latest
+    container_name: nodeRED
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./data:/data
+    privileged: true
+    tty: true
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    # restart: always

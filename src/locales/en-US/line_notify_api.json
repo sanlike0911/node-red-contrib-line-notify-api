@@ -7,7 +7,7 @@
         },
         "message": {
             "ready": "Ready",
-            "complete": "Display complete",
+            "complete": "Send complete",
             "tokenError": "Token setting error",
             "error": "Error occurred",
             "communicationError": "Transmission error"

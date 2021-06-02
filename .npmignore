@@ -2,6 +2,8 @@
 #########
 *.bak
 *.log
+build.bat
+tsconfig.json
 
 # Directories #
 ###############

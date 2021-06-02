@@ -1,10 +1,16 @@
 {
   "name": "node-red-contrib-line-notify-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node-RED node for sending to line notifications.",
   "author": "sanlike",
   "license": "Apache",
-  "main": "line_notify_api.js",
+  "keywords": [
+    "node-red",
+    "line",
+    "notification",
+    "sanlike"
+  ],
+  "main": "none",
   "scripts": {
     "test": "mocha \"src/**/test/*_spec.js\"",
     "dev": "ts-node src/line_notify_api.ts",
@@ -17,7 +23,7 @@
   "node-red": {
     "version": ">=1.0.0",
     "nodes": {
-      "line_notify_api": "line_notify_api.js"
+      "line_notify_api": "nodes/line_notify_api.js"
     }
   },
   "dependencies": {
@@ -42,10 +48,5 @@
   "bugs": {
     "url": "https://github.com/sanlike0911/node-red-contrib-line-notify-api/issues"
   },
-  "homepage": "https://github.com/sanlike0911/node-red-contrib-line-notify-api#readme",
-  "keywords": [
-    "line",
-    "notofy",
-    "sanlike"
-  ]
+  "homepage": "https://github.com/sanlike0911/node-red-contrib-line-notify-api#readme"
 }

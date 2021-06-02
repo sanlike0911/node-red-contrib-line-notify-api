@@ -42,12 +42,12 @@ C:.
 │
 ```
 
-- ビルドとインストール
+- Build and install
 
-    以下コマンドで、自動でビルドとインストールが出来ます。
+    You can use this command to build and install.
 
     ```cmd
     .\build.bat
     ```
 
-    ※windows用
+    ※windows only.

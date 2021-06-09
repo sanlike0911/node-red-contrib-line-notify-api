@@ -1,4 +1,60 @@
 <!DOCTYPE html>
+<!-- <script type="text/html" data-help-name="line_notify_api" data-lang="en-US"> -->
 <script type="text/x-red" data-help-name="line_notify_api" data-lang="en-US">
+  <p>API for notification to LINE.</p>
+
+  <!-- property -->
+  <hr style="margin-top: 30px; margin-bottom: 30px;" align="middle">
+  <h3>Property</h3>
+  <dl class="message-properties">
+    <dt class="optional">Name <b>Optional</b><span class="property-type">string</span></dt>
+    <dd>You can set the node name displayed in the flow.</dd>
+    <dt>Token <b style="color: red;">Required</b><span class="property-type">string</span></dt>
+    <dd>
+      <p>Set the token issued by Line Developers.</p>
+      <p>See <a href="https://notify-bot.line.me/doc/ja/">LINE Notify API Document</a>for more information.</p>
+   </dd>
+    <dt class="optional">Package ID <b>Optional</b><span class="property-type">number</span></dt>
+    <dd>Set this setting to "If you want to add a stamp to a message".</dd>
+    <dt class="optional">Sticker ID <b>Optional</b><span class="property-type">number</span></dt>
+    <dd>Set this setting to "If you want to add a stamp to a message".</dd>
+ </dl>
+  <span><b>Note</b>: The priority of the stamp setting (package ID, sticker ID) is "input parameter>property setting".</span>
+
+  <!-- Inputs -->
+  <hr style="margin-top: 30px; margin-bottom: 30px;" align="middle">
+  <h3>Inputs</h3>
+  <dl class="message-properties">
+      <dt>payload or message <b style="color: red;">Required</b><span class="property-type">string</span></dt>
+      <dd>message</dd>
+      <dt class="optional">stickerPackageId <b>Optional</b><span class="property-type">number</span></dt>
+      <dd>stickerPackageId</dd>
+      <dt class="optional">stickerId <b>optional</b><span class="property-type">number</span></dt>
+      <dd>stickerId</dd>
+ </dl>
+
+  <!-- outputs -->
+  <hr style="margin-top: 30px; margin-bottom: 30px;" align="middle">
+  <h3>outputs</h3>
+  <dl class="message-properties">
+      <dt>status <span class="property-type">number</span></dt>
+        <dd>
+          <p>200: Success</p>
+          <p>400: Illegal request</p>
+          <p>401: Invalid access token</p>
+          <p>500: Failed due to in-server error</p>
+          <p>Other than the above: Retry after a while or interrupt the process</p>
+       </dd>
+      <dt>message <span class="property-type">string</span></dt>
+      <dd>Processing result</dd>
+ </dl>
+
+  <!-- Details -->
+  <hr style="margin-top: 30px; margin-bottom: 30px;" align="middle">
+  <h3>Details</h3>
+  <p>This API is implemented according to the specifications of <b>© LINE Corporation</b>.</p>
+  <p>See <a href="https://notify-bot.line.me/doc/ja/">LINE Notify API Document</a>for more information.</p>
+
+  <!-- References -->
 
 </script>

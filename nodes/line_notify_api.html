@@ -18,11 +18,13 @@
 <script type="text/javascript">
     function mk_conf(NAME) {
         const conf = {
-            category: 'network',
+            category: 'line',
             color: 'rgb( 63, 173, 181)',
             defaults: {
                 name: {value:""},
-                accessToken: { type: "password", required: true }
+                accessToken: { type: "password", required: true },
+                stickerPackageId: {value:""},
+                stickerId: {value:""}
             },
             inputs:1,
             outputs:1,
@@ -56,5 +58,38 @@
             <label for="node-input-accessToken"><i class="fa fa-shield" aria-hidden="true"></i><span data-i18n="resources.labels.accessToken"></span></label>
             <input type="password" id="node-input-accessToken" placeholder="LINE Notify AccessToken">
         </div>
+
+        <!-- stickerPackageId & stickerId -->
+      　<hr>
+        <div class="form-row">
+            <b><p data-i18n="resources.descriptions.sticker"></p></b>
+            <label for="node-input-stickerPackageId"><i class="fa fa-heart"></i><span data-i18n="resources.labels.stickerPackageId"></span></label>
+            <input class="sticker-input" type="number" id="node-input-stickerPackageId">
+            <label style="margin-left: 15px;" for="node-input-stickerId"><i class="fa fa-heart-o"></i><span data-i18n="resources.labels.stickerId"></span></label>
+            <input class="sticker-input" type="number" id="node-input-stickerId">
+        </div>
+
+        <!-- iframe: List of available stickers -->
+      　<hr>
+        <div class="form-row">
+            <b><p data-i18n="resources.descriptions.sticker-link"></p></b>
+            <iframe class="iframe-line-stickers"
+                title="List of available stickers"
+                src="https://developers.line.biz/en/docs/messaging-api/sticker-list/">
+            </iframe>
+        </div>
     </div>
 </script>
+
+<style>
+    .sticker-input {
+        width:100px !important;
+    }
+    .iframe-line-stickers {
+        border:none;
+        width:100%;
+        height:500px;
+        padding:0;
+        margin:0;
+   }
+</style>

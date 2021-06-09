@@ -2,8 +2,14 @@
     "resources": {
         "paletteLabel": "Line Notify",
         "labels": {
-            "accessToken": "access token",
-            "name": "name"
+            "accessToken": "Access token",
+            "name": "Name",
+            "stickerPackageId": "Package ID",
+            "stickerId": "Sticker ID"
+        },
+        "descriptions": {
+            "sticker": "Sticker settings. *optional",
+            "sticker-link": "List of available stickers(LINE Developers)"
         },
         "message": {
             "ready": "Ready",

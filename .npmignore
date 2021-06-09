@@ -5,6 +5,10 @@
 build.bat
 tsconfig.json
 
+# vscode #
+###############
+.vscode/
+
 # Directories #
 ###############
 dist/

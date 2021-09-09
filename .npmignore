@@ -4,10 +4,7 @@
 *.log
 build.bat
 tsconfig.json
-
-# vscode #
-###############
-.vscode/
+build-exclude-filelist
 
 # Directories #
 ###############
@@ -15,11 +12,16 @@ dist/
 src/
 test/
 
+# vscode #
+###############
+.vscode/
+
 # Node.js #
 ###########
 package-lock.json
 .npmignore
-/node_modules/
+node_modules/
+data/
 
 # Temporary files #
 ###################
@@ -35,3 +37,7 @@ package-lock.json
 .jshintignore
 .travis.yml
 .editorconfig
+
+# Node-RED #
+#############
+#examples/

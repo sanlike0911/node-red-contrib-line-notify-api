@@ -1,18 +1,71 @@
 [
     {
+        "id": "385b34f1dc75e119",
+        "type": "tab",
+        "label": "フロー 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "34f6e448.c7b61c",
         "type": "line_notify_api",
-        "z": "d5bad928.375738",
+        "z": "385b34f1dc75e119",
         "name": "",
-        "accessToken": "your_token",
+        "accessToken": "your token",
         "stickerPackageId": "446",
         "stickerId": "1988",
         "x": 330,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
-                "72aecd85.f1c1f4"
+                "cb3f4d3ad7311beb"
             ]
         ]
+    },
+    {
+        "id": "55a2eb6e69e47509",
+        "type": "inject",
+        "z": "385b34f1dc75e119",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "34f6e448.c7b61c"
+            ]
+        ]
+    },
+    {
+        "id": "cb3f4d3ad7311beb",
+        "type": "debug",
+        "z": "385b34f1dc75e119",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 80,
+        "wires": []
     }
 ]

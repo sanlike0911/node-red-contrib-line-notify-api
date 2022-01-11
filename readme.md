@@ -46,13 +46,13 @@ npm install node-red-contrib-line-notify-api
 
         The line notification message is passed by msg.payload or msg.message.
 
-        ```json
+        ```javascript
         msg.payload = "line notification message.";
         ```
 
         or
 
-        ```json
+        ```javascript
         msg.message = "line notification message."; /* This `msg.message` is given priority. */
         ```
 
@@ -64,7 +64,7 @@ npm install node-red-contrib-line-notify-api
 
         [List of available stickers](https://developers.line.biz/en/docs/messaging-api/sticker-list/)
 
-        ```json
+        ```javascript
         msg.stickerPackageId = 446; /* Package ID. */
         msg.stickerId = 1990;       /* Sticker ID. */
         ```
@@ -100,7 +100,7 @@ There are some npm-scripts to help developments.
 
 ## file list
 
-  ```json
+  ```text
   [root]
   │  package.json
   │  README.md

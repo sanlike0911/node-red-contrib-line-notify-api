@@ -90,8 +90,42 @@ npm install node-red-contrib-line-notify-api
     {"status":200,"message":"ok"}
     ```
 
-- Example
+## npm-scripts
 
-    ```json
-    [{"id":"34f6e448.c7b61c","type":"line_notify_api","z":"d5bad928.375738","name":"","accessToken":"your_token","stickerPackageId":"446","stickerId":"1988","x":330,"y":100,"wires":[["72aecd85.f1c1f4"]]}]
-    ```
+There are some npm-scripts to help developments.
+
+- npm install - Install the testing environment in your project.
+- npm run build - Make `./data/my-node` directory from the `src` directory and Install the my-node in Node-RED.
+- npm run start - Start Node-RED. `"http://localhost:1880"`
+
+## file list
+
+  ```json
+  [root]
+  │  package.json
+  │  README.md
+  │  tsconfig.json
+  │
+  ├─data -> `Node-Red work files`
+  │  │  
+  │  ├─my-node -> `project files` The resource files and built files should be placed here.
+  │  │  │  package.json
+  │  │  │
+  │  │  └─nodes -> The resource files and built files should be placed here.
+  │  │     └─...
+  │  │
+  │  └─node_modules
+  │     └─...
+  │
+  ├─dist -> `The project built files`
+  ├─examples -> `node-RED flow files`
+  ├─figs
+  └─src
+      └─nodes -> project files
+          ├─icons
+          ├─lib
+          ├─locales
+          │  ├─en-US
+          │  └─ja
+          └─test
+  ```

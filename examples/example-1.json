@@ -1,0 +1,18 @@
+[
+    {
+        "id": "34f6e448.c7b61c",
+        "type": "line_notify_api",
+        "z": "d5bad928.375738",
+        "name": "",
+        "accessToken": "your_token",
+        "stickerPackageId": "446",
+        "stickerId": "1988",
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "72aecd85.f1c1f4"
+            ]
+        ]
+    }
+]

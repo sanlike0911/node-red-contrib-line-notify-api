@@ -1,6 +1,7 @@
 # node-red-contrib-line-notify-api
 
-A Node-RED node for sending to line notifications.
+This is a Node-RED node for using "LINE Notify API".
+the NODE-RED node supports sending "message", "stamp" and "image".
 
 ![line_notify_api](./figs/sample00.png)
 
@@ -60,13 +61,24 @@ npm install node-red-contrib-line-notify-api
 
         This `sticker` can send additional stamp messages.
 
-        The function is enabled by setting numerical values for `stickerPackageId` and `stickerId`.
+        The feature is enabled by setting values for `msg.stickerPackageId` and `msg.stickerId`.
 
         [List of available stickers](https://developers.line.biz/en/docs/messaging-api/sticker-list/)
 
         ```javascript
-        msg.stickerPackageId = 446; /* Package ID. */
-        msg.stickerId = 1990;       /* Sticker ID. */
+        msg.stickerPackageId = 446; /* Package ID: set numerical value. */
+        msg.stickerId = 1990;       /* Sticker ID: set numerical value. */
+        ```
+
+    3) image `*optional`
+
+        This "image" can create a base64 image.
+
+        This feature is enabled by setting values for "msg.imageBase64String" and "msg.imageFileName".
+
+        ```javascript
+        msg.imageBase64String = "/9j/4AAQSkZJRgAB..."; /* image of base64: it should start with "/9j/4AAQSkZJRgAB..." instead of "data:image/jpg;base64," */
+        msg.imageFileName = "imageFileName.jpg"        /* image file name: it should include file name and extension, like "imageFileName.jpg" instead of "imageFileName" */
         ```
 
 - Outputs
@@ -120,6 +132,7 @@ There are some npm-scripts to help developments.
   ├─dist -> `The project built files`
   ├─examples -> `node-RED flow files`
   ├─figs
+  ├─nodes -> `The project built files`
   └─src
       └─nodes -> project files
           ├─icons

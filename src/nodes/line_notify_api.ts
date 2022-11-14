@@ -1,8 +1,9 @@
 import { NodeInitializer } from "node-red";
 import lineNotifyApi from "./type";
+import { Buffer } from 'buffer';
+import FormData from 'form-data';
 
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import qs from "querystring";
 
 const nodeInit: NodeInitializer = (RED): void => {
 
@@ -33,20 +34,24 @@ const nodeInit: NodeInitializer = (RED): void => {
 
         node.on('input', async (msg: any) => {
             try {
-                let reqQueryPram: qs.ParsedUrlQueryInput  = {
-                    message: "",
-                    notificationDisabled: false
-                };
+                let formData = new FormData();
+
                 // Required
-                reqQueryPram.message = msg?.message ?? msg.payload;
+                formData.append('message', msg?.message ?? msg.payload);
 
                 // Optional: sticker
                 if( msg?.hasOwnProperty('stickerPackageId') && msg?.hasOwnProperty('stickerId') ) {
-                    reqQueryPram.stickerPackageId = msg?.stickerPackageId;
-                    reqQueryPram.stickerId = msg?.stickerId;
+                    formData.append('stickerPackageId', msg?.stickerPackageId);
+                    formData.append('stickerId', msg?.stickerId);
                 } else if( UN_KNOWN_VALUE !== node.stickerPackageId && UN_KNOWN_VALUE !== node.stickerId ) {
-                    reqQueryPram.stickerPackageId = node.stickerPackageId;
-                    reqQueryPram.stickerId = node.stickerId;
+                    formData.append('stickerPackageId', node?.stickerPackageId);
+                    formData.append('stickerId', node?.stickerId);
+                }
+
+                // Optional: image
+                if( msg?.hasOwnProperty('imageBase64') && msg?.hasOwnProperty('imageFileName') ) {
+                    const _bf = Buffer.from(msg?.imageBase64, "base64");
+                    formData.append('imageFile', _bf, msg?.imageFileName);
                 }
 
                 msg.payload = {};
@@ -56,11 +61,13 @@ const nodeInit: NodeInitializer = (RED): void => {
                         url: LINE_NOTIFY_API,
                         method: 'post',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Content-Type': 'multipart/form-data',
                             'Authorization': 'Bearer ' + node.accessToken
                         },
-                        data: qs.stringify(reqQueryPram)
+                        data: formData
                     }
+                    // console.log(lineNotifyConfig);
+
                     const responseLINENotify: AxiosResponse<any> = await axios.request(lineNotifyConfig);
                     if(200 === responseLINENotify.status){
                         msg.payload = responseLINENotify.data;

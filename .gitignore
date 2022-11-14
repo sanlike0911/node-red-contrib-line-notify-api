@@ -77,3 +77,4 @@ data/
 dist/
 nodes/
 package-lock.json
+image/
